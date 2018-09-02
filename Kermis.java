@@ -20,30 +20,37 @@ public class Kermis {
 			{botsautos, spin, spiegelpalijs, spookhuis, hawaii, ladderKlimmen, hollandscheGebakkraam};
 		
 		for (int i=0; i<5; i++) { // om te testen, wordt later while of do while
-			//int number = Integer.parseInt(kermis.vraagInvoer());
 			kermis.naarDeKermis(attracties);
 		}
 	}
 	
 	
+	
 	void naarDeKermis(Attractie[] attracties) {
-		String invoer = vraagInvoer();
-		try 
-		{
-			int nummer = Integer.parseInt(invoer);
-			while (nummer > aantalAttracties) {
-				invoer = vraagInvoer();
-				nummer = Integer.parseInt(invoer);
-			}
-			attracties[nummer-1].kaartjeKopen();
-		} 
-		catch (Exception e) 
-		{
-			char letter = invoer.charAt(0);
-			System.out.println(letter);
+		String stringInvoer = vraagInvoer();
+		char invoer = stringInvoer.charAt(0);
+		switch (invoer) {
+		case '1':
+		case '2':
+		case '3':
+		case '4':
+		case '5':
+		case '6':
+		case '7':
+			attracties[Integer.parseInt(stringInvoer)-1].kaartjeKopen();
+			break;
+		case 'o': 
+			System.out.println(Kassa.omzetNaBelasting);
+			break;
+		case 'k':
+			System.out.println(Kassa.totaalKaartjes);
+			break;
+		case 'b':
+			Belastinginspecteur.langskomen(attracties);
+			break;
 		}
-		
 	}
+	
 	
 	
 	String vraagInvoer() {
