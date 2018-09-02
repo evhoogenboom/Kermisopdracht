@@ -6,7 +6,7 @@ public abstract class RisicoRijkeAttractie extends Attractie {
 	
 	boolean keuringNogGeldig() {
 		boolean result = false;
-		if (draaiLimiet != 0 && aantalKaartjes % draaiLimiet != 0) {
+		if (draaiLimiet != 0 && (aantalKaartjes) % draaiLimiet != 0) {
 			result = true;
 		}
 		return result;

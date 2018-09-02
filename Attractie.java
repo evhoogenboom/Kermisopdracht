@@ -1,6 +1,9 @@
-import java.nio.channels.NonWritableChannelException;
+import java.util.Scanner;
+
 
 public class Attractie {
+	
+	Scanner sc = new Scanner(System.in);
 	
 	String attractieNummer;
 	
@@ -32,11 +35,12 @@ public class Attractie {
 		System.out.println("Er is hier helemaal geen " + naam);
 	}
 	
-	void kaartjeKopen() {
+	
+	double kaartjeKopen() {
 		attractieOmzet += prijs;
 		teBelastenOmzet += prijs;
 		Kassa.omzet += prijs;
-		Kassa.omzetNaBelasting += prijs;
+		Kassa.setOmzetNaBelasting(prijs);
 		
 		aantalKaartjes++;
 		Kassa.totaalKaartjes++;
@@ -47,14 +51,27 @@ public class Attractie {
 		} 
 		catch (KeuringsException e) 
 		{
-			System.out.println("Exception");
+			vraagMonteur();
+			System.out.println("De monteur is langsgeweest");
 		} 
 		catch (Exception e) 
 		{
 			
 		}
-		
+		return prijs;
 	}
+	
+	
+	void vraagMonteur() {
+		System.out.println("Draailimiet bereikt, toets 'm' om de monteur te halen");
+		String invoer = sc.nextLine();
+		if (!invoer.equals("m")) {
+			System.out.println("verkeerde invoer");
+			//vraagMonteur();
+		}
+	}
+	
+	
 	
 }
 

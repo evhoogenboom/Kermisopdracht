@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Kermis {
 	final static int aantalAttracties = 7;
+	static double zakgeld = 60;
 	Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
@@ -22,6 +23,11 @@ public class Kermis {
 		for (int i=0; i<5; i++) { // om te testen, wordt later while of do while
 			kermis.naarDeKermis(attracties);
 		}
+		
+		do {
+			kermis.naarDeKermis(attracties);
+		} while (zakgeld >= 5);
+		System.out.println("Tijd om naar huis te gaan.");
 	}
 	
 	
@@ -37,10 +43,10 @@ public class Kermis {
 		case '5':
 		case '6':
 		case '7':
-			attracties[Integer.parseInt(stringInvoer)-1].kaartjeKopen();
+			zakgeld -= attracties[Integer.parseInt(stringInvoer)-1].kaartjeKopen();
 			break;
 		case 'o': 
-			System.out.println(Kassa.omzetNaBelasting);
+			System.out.println(Kassa.getOmzetNaBelasting());
 			break;
 		case 'k':
 			System.out.println(Kassa.totaalKaartjes);
