@@ -28,7 +28,8 @@ public class Attractie {
 	}
 	
 	void draaien() throws KeuringsException {
-		System.out.println(naam);
+		System.out.println("Je komt van een koude kermis thuis.");
+		System.out.println("Er is hier helemaal geen " + naam);
 	}
 	
 	void kaartjeKopen() {
@@ -40,10 +41,16 @@ public class Attractie {
 		aantalKaartjes++;
 		Kassa.totaalKaartjes++;
 		
-		try {draaien();
-		} catch (KeuringsException e) {
+		try 
+		{
+			draaien();
+		} 
+		catch (KeuringsException e) 
+		{
 			System.out.println("Exception");
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			
 		}
 		
@@ -68,6 +75,7 @@ interface GokAttractie {
 		double belasting = attractie.teBelastenOmzet*belastingTarief;
 		attractie.teBelastenOmzet = 0;
 		return belasting;
+		
 	}
 }
 

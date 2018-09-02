@@ -9,15 +9,17 @@ public class LadderKlimmen extends Attractie implements GokAttractie {
 	}
 	
 	
-	@Override // waarom hoef ik hier geen exception te doen?
+	
+	
+	@Override
 	void draaien() {
 		System.out.println("De attractie " + naam + " draait.");
 	}
-	
-	
+
 	public double kansspelbelastingBetalen() {
 		double belasting = attractieOmzet*belastingTarief;
 		attractieOmzet -= belasting; // goed
 		return belasting;
 	}
+	
 }
