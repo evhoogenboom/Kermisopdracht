@@ -5,8 +5,6 @@ public class Attractie {
 	
 	Scanner sc = new Scanner(System.in);
 	
-	String attractieNummer;
-	
 	String naam;
 	double prijs;
 	int oppervlakte;
@@ -16,11 +14,10 @@ public class Attractie {
 	
 	int aantalKaartjes;
 	
-	double kansSpelBelasting = 0;
 	
 	
-	Attractie(String attractieNummer, String naam, double prijs, int oppervlakte) {
-		this.attractieNummer = attractieNummer;
+	
+	Attractie(String naam, double prijs, int oppervlakte) {
 		this.naam = naam;
 		this.prijs = prijs;
 		this.oppervlakte = oppervlakte;
@@ -51,8 +48,7 @@ public class Attractie {
 		} 
 		catch (KeuringsException e) 
 		{
-			vraagMonteur();
-			System.out.println("De monteur is langsgeweest");
+			System.out.println("hier gaat iets mis");
 		} 
 		catch (Exception e) 
 		{
@@ -61,22 +57,7 @@ public class Attractie {
 		return prijs;
 	}
 	
-	
-	void vraagMonteur() {
-		System.out.println("Draailimiet bereikt, toets 'm' om de monteur te halen");
-		String invoer = sc.nextLine();
-		if (!invoer.equals("m")) {
-			System.out.println("verkeerde invoer");
-			//vraagMonteur();
-		}
-	}
-	
-	
-	
 }
-
-
-
 
 
 

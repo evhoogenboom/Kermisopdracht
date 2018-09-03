@@ -1,8 +1,7 @@
 
 public class Spiegelpalijs extends Attractie {
 	
-	Spiegelpalijs(String attractieNummer, String naam, double prijs, int oppervlakte) {
-		this.attractieNummer = attractieNummer;
+	Spiegelpalijs(String naam, double prijs, int oppervlakte) {
 		this.naam = naam;
 		this.prijs = prijs;
 		this.oppervlakte = oppervlakte;

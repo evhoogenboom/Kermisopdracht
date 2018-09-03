@@ -1,8 +1,8 @@
 
 public class Botsautos extends Attractie {
 
-	Botsautos(String attractieNummer, String naam, double prijs, int oppervlakte) {
-		super(attractieNummer, naam, prijs, oppervlakte);
+	Botsautos(String naam, double prijs, int oppervlakte) {
+		super(naam, prijs, oppervlakte);
 	}
 	
 	

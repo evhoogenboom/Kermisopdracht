@@ -9,20 +9,16 @@ public class Kermis {
 		
 		Kermis kermis = new Kermis();
 		
-		Attractie botsautos = new Botsautos("1", "Botsauto's", 2.50, 0);		
-		Attractie spin = new Spin("2", "Spin", 2.25, 0);
-		Attractie spiegelpalijs = new Spiegelpalijs("2", "Spiegelpalijs", 2.25, 0);
-		Attractie spookhuis = new Spookhuis("2", "Spookhuis", 2.25, 0);
+		Attractie botsautos = new Botsautos("Botsauto's", 2.50, 0);		
+		Attractie spin = new Spin("Spin", 2.25, 0);
+		Attractie spiegelpalijs = new Spiegelpalijs("Spiegelpalijs", 2.75, 0);
+		Attractie spookhuis = new Spookhuis("Spookhuis", 3.2, 0);
 		Attractie hawaii = new Hawaii("5", "Hawaii", 2.90, 0);
-		Attractie ladderKlimmen = new LadderKlimmen("6", "Ladderklimmen", 5., 0);
-		Attractie hollandscheGebakkraam = new Attractie("2", "Hollandsche Gebakkraam", 2.25, 0);
+		Attractie ladderKlimmen = new LadderKlimmen("Ladderklimmen", 5., 0);
+		Attractie hollandscheGebakkraam = new Attractie("Hollandsche Gebakkraam", 0, 0);
 		
 		Attractie[] attracties = 
 			{botsautos, spin, spiegelpalijs, spookhuis, hawaii, ladderKlimmen, hollandscheGebakkraam};
-		
-		for (int i=0; i<5; i++) { // om te testen, wordt later while of do while
-			kermis.naarDeKermis(attracties);
-		}
 		
 		do {
 			kermis.naarDeKermis(attracties);

@@ -1,12 +1,11 @@
 
-public class Spin extends RisicoRijkeAttractie {
+public class Spin extends RisicoRijkeAttractie implements GokAttractie {
 	
-	Spin(String attractieNummer, String naam, double prijs, int oppervlakte) {
-		this(attractieNummer, naam, prijs, oppervlakte, 5);
+	Spin(String naam, double prijs, int oppervlakte) {
+		this(naam, prijs, oppervlakte, 5);
 	}
 	
-	Spin(String attractieNummer, String naam, double prijs, int oppervlakte, int draaiLimiet) {
-		this.attractieNummer = attractieNummer;
+	Spin(String naam, double prijs, int oppervlakte, int draaiLimiet) {
 		this.naam = naam;
 		this.prijs = prijs;
 		this.oppervlakte = oppervlakte;
@@ -18,11 +17,11 @@ public class Spin extends RisicoRijkeAttractie {
 	
 	@Override
 	void draaien() throws KeuringsException {
-		if (!keuringNogGeldig()) {
+		if (!keuringNogGeldig) {
 			throw new KeuringsException();
 		} 
 		System.out.println("De attractie " + naam + " draait.");
-		System.out.println(draaiLimiet);
+		keuringNogGeldig = keuringNogGeldig();
 	}
 	
 	

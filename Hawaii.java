@@ -3,11 +3,10 @@
 public class Hawaii extends RisicoRijkeAttractie {
 	
 	Hawaii(String attractieNummer, String naam, double prijs, int oppervlakte) {
-		this(attractieNummer, naam, prijs, oppervlakte, 10);
+		this(naam, prijs, oppervlakte, 10);
 	}
 	
-	Hawaii(String attractieNummer, String naam, double prijs, int oppervlakte, int draaiLimiet) {
-		this.attractieNummer = attractieNummer;
+	Hawaii(String naam, double prijs, int oppervlakte, int draaiLimiet) {
 		this.naam = naam;
 		this.prijs = prijs;
 		this.oppervlakte = oppervlakte;

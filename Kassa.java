@@ -18,7 +18,7 @@ public class Kassa {
 	
 	
 	public static void setOmzetNaBelasting(double prijs) {
-		omzetNaBelasting -= prijs;
+		omzetNaBelasting += prijs;
 	}
 	
 }

@@ -1,13 +1,14 @@
 
 public class Belastinginspecteur {
 	
-	static double opgehaaldeBelasting;
+	static double totaalOpgehaaldeBelasting;
 	
 	static void langskomen(Attractie[] attracties) {
 		for (Attractie attractie : attracties) {
 			if (attractie instanceof GokAttractie) {
-				opgehaaldeBelasting += GokAttractie.kansspelbelastingBetalen(attractie);
-				Kassa.update(opgehaaldeBelasting);
+				double belasting = GokAttractie.kansspelbelastingBetalen(attractie);
+				totaalOpgehaaldeBelasting += belasting;
+				Kassa.update(belasting);
 				System.out.println("De belastinginspecteur is langsgeweest bij " + attractie.naam);
 			}
 		}
